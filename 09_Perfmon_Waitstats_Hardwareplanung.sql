@@ -1,6 +1,12 @@
 /*
-SQL SERVER: PERFMON, WAITSTATS, BASELINE UND HARDWARESIZING
+SQL SERVER: PERFMON, WAITSTATS, BASELINE UND HARDWAREPLANUNG
 Stand: 13.10.2026 | SQL Server unter Windows
+
+ÜBERBLICK
+Dieses Nachschlagewerk erläutert Windows-Performance-Counter, SQL-Server-
+Waittypen und Ansätze für Baseline und Hardwaredimensionierung. Es führt keine
+Abfragen oder Änderungen aus. Messwerte sind im Kontext von Last, SLA und einer
+gesunden Baseline zu interpretieren; Planungswerte sind ausdrücklich markiert.
 
 Diese SQL-Datei ist ein kommentiertes Nachschlagewerk. Sie führt keine Abfragen
 oder Änderungen aus. Windows-Counter und SQL-Waittypen werden getrennt benannt.

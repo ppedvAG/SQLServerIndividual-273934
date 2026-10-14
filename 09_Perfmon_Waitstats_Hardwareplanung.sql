@@ -8,9 +8,6 @@ Waittypen und Ansätze für Baseline und Hardwaredimensionierung. Es führt kein
 Abfragen oder Änderungen aus. Messwerte sind im Kontext von Last, SLA und einer
 gesunden Baseline zu interpretieren; Planungswerte sind ausdrücklich markiert.
 
-Diese SQL-Datei ist ein kommentiertes Nachschlagewerk. Sie führt keine Abfragen
-oder Änderungen aus. Windows-Counter und SQL-Waittypen werden getrennt benannt.
-
 MESSPLAN UND BEWERTUNG
 - Mindestens 2–4 repräsentative Wochen inklusive Spitzen, ETL, Backups, CHECKDB,
   Indexwartung und Monatsabschluss messen; bei seltenen Spitzen länger.

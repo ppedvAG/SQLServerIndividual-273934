@@ -21,8 +21,9 @@ PRAXISTIPPS
   Durchschnitt berechnen.
 */
 
--- Setzt den Kontext für die nachfolgenden Datenbankoptionen auf master.
-USE [master];
+-- Wählt Northwind als Kontext für die datenbankbezogenen Einstellungen.
+-- ALTER DATABASE SCOPED CONFIGURATION gilt für die aktuelle Datenbank.
+USE [Northwind];
 GO
 
 -- Aktiviert inkrementelle automatische Statistiken für Northwind.

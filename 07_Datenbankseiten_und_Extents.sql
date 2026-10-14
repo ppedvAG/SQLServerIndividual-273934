@@ -12,7 +12,7 @@ BEGRIFFE UND PRAXISTIPPS
   Seiten einzeln oder als einheitliche Extents zuweisen.
 - Gleichzeitiger Zugriff wird durch interne Synchronisierung geschützt.
   Latches schützen Seitenzugriffe im Speicher; sie sind von I/O-Waits zu
-  unterscheiden. Spinlocks sind ein anderes Synchronisationsmechanismus.
+  unterscheiden. Spinlocks sind ein anderer Synchronisationsmechanismus.
 - sys.dm_db_index_physical_stats ist das aktuelle Werkzeug zur Untersuchung
   physischer Indexeigenschaften. DETAILED kann bei großen Objekten aufwendig
   sein; für erste Prüfungen LIMITED oder SAMPLED in Betracht ziehen.

@@ -24,6 +24,8 @@ BACKUP-PRAXISTIPPS
   Wiederherstellungsmodell und eine geplante Log-Backup-Kette voraus.
 - Das Dienstkonto des SQL Servers benötigt Schreibrechte im Zielverzeichnis.
   Backups nach Möglichkeit auf getrenntem, geschütztem Speicher ablegen.
+- COMPRESSION und CHECKSUM müssen zur eingesetzten SQL-Server-Version und
+  Edition passen. Aufbewahrung und Wiederherstellung der Backupmedien festlegen.
 */
 
 -- Erstellt ein vollständiges Backup von TestDb. Der Pfad muss erreichbar sein
@@ -31,7 +33,7 @@ BACKUP-PRAXISTIPPS
 BACKUP DATABASE [TestDb]
 TO DISK = N'C:\_SQLBACKUP\TestDb_full.bak'
 WITH
-    INIT,
+    NOINIT,
     NAME = N'TestDb – vollständige Sicherung',
     CHECKSUM,
     COMPRESSION,
@@ -43,7 +45,7 @@ BACKUP DATABASE [TestDb]
 TO DISK = N'C:\_SQLBACKUP\TestDb_diff.bak'
 WITH
     DIFFERENTIAL,
-    INIT,
+    NOINIT,
     NAME = N'TestDb – differenzielle Sicherung',
     CHECKSUM,
     COMPRESSION,
@@ -55,7 +57,7 @@ GO
 BACKUP LOG [TestDb]
 TO DISK = N'C:\_SQLBACKUP\TestDb_log.trn'
 WITH
-    INIT,
+    NOINIT,
     NAME = N'TestDb – Transaktionslog-Sicherung',
     CHECKSUM,
     COMPRESSION,

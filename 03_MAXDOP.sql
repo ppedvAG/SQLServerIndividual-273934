@@ -7,9 +7,10 @@ verwendet werden. Der Abfrageoptimierer entscheidet anhand des Plans und der
 Kosten, ob parallel ausgeführt wird.
 
 WIE DIE EINSTELLUNGEN ZUSAMMENSPIELEN
-- Serveroption, datenbankbezogene Einstellung und Abfragehinweis bilden
-  Obergrenzen. Die Abfrage kann diese Grenzen weiter einschränken; ein
-  MAXDOP-Hinweis sollte nicht ohne Messung pauschal eingesetzt werden.
+- MAXDOP kann auf Server-, Datenbank- und Abfrageebene festgelegt werden.
+  Spezifischere Einstellungen haben Vorrang; die Werte werden nicht addiert.
+  Ein Abfragehinweis kann die Einstellung für die einzelne Abfrage überschreiben
+  und sollte deshalb nur gezielt und nach Messung eingesetzt werden.
 - MAXDOP = 0 lässt SQL Server grundsätzlich alle verfügbaren Prozessoren
   berücksichtigen; versions- und plattformabhängige Grenzen gelten weiterhin.
   Microsofts Empfehlungen für den Wert hängen unter anderem von NUMA und
@@ -27,6 +28,10 @@ Das Beispiel verwendet die Datenbank Northwind und die Tabelle KU. Passe den
 Datenbank- und Tabellennamen an deine Umgebung an. STATISTICS IO/TIME liefert
 Metriken für die jeweilige Verbindung; die Ausgabe wird im Client angezeigt.
 */
+
+-- Stellt sicher, dass die folgenden Tabellenabfragen im Northwind-Kontext laufen.
+USE [Northwind];
+GO
 
 -- Aktiviert für diese Verbindung die Anzeige von logischen/physikalischen
 -- Lesevorgängen sowie CPU- und verstrichener Zeit der folgenden Abfragen.

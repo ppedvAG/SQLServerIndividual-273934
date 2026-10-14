@@ -13,6 +13,8 @@ PRAXISTIPPS
 - Eine skalare Funktion pro Ergebniszeile kann teuer werden. Für große
   Ergebnismengen set-basierte Abfragen oder Inline-Tabellenwertfunktionen
   bevorzugen und den tatsächlichen Ausführungsplan prüfen.
+- CREATE OR ALTER benötigt eine unterstützte SQL-Server-Version (SQL Server
+  2016 SP1 oder neuer); ältere Versionen benötigen angepasste DDL.
 - Die Beispiele nutzen Tabellen aus der Northwind-Datenbank und setzen
   voraus, dass diese vorhanden sind.
 */
@@ -57,6 +59,7 @@ SELECT
     Quantity,
     UnitPrice
 FROM dbo.vKundeumsatz;
+GO
 
 -- Erstellt oder aktualisiert eine Prozedur, die Bestellpositionen für ein
 -- Produkt zurückgibt. Der Parametername und seine Verwendung stimmen überein.

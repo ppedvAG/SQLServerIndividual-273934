@@ -18,6 +18,10 @@ DIENSTKONTEN UND WINDOWS
 SERVEROPTIONEN
 - MAXDOP begrenzt den Parallelitätsgrad einer Abfrage. Die sinnvolle Einstellung
   hängt von NUMA-Topologie, CPU-Anzahl und Workload ab; siehe 03_MAXDOP.sql.
+  zu berücksichtigen ist auch der Kostenschwellenwert, ab dem Parallelismus erst 
+  verwedent wird. per Default auf 5 eingestellt ist das deutlich zu niederig.
+  Für OLTP eignen sich meist höhere Werte wie 50 und für OLAP eher 25. 
+  Aber den! korrekten Werte muss man bei sich herausfinden.
 - „max server memory“ so setzen, dass Betriebssystem, Agent und weitere
   Anwendungen ausreichend Speicher behalten. Der benötigte Puffer ist
   host- und workloadabhängig. „min server memory“ reserviert nicht sofort RAM

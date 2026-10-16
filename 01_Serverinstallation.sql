@@ -30,11 +30,15 @@ PLANUNG UND PRAXISTIPPS
   Datenbank voraus. Sie geben keine Installationseinstellungen vor.
 */
 
+-- Was leistet die Volltextsuche?
+--Sie kann Maiers finden :-)
 -- Sucht in einer vorhandenen Tabelle nach Familiennamen, die mit „maier“ beginnen.
 -- Die Tabelle und Spalte müssen im aktuellen Datenbankkontext vorhanden sein.
+--Volltextsuche ist sehr flexibel , wenn es um Suche innerhalb von  Texten geht.
+--Die Siche mit Like ist nur dann sehr schnell, wenn wir von Position 1 aus suchen
 SELECT *
 FROM dbo.Kunden
-WHERE FamName LIKE N'maier%';
+WHERE FamName LIKE N'maier%'; --oder Meyr, oder Mair..
 
 -- Ermittelt den Soundex-Code für eine beispielhafte Schreibweise.
 SELECT SOUNDEX(N'maier') AS SoundexMaier;
